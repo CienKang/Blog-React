@@ -17,7 +17,7 @@ function CreateBlog() {
         console.log(title, body);
     }
 
-    
+
     return (
         <div className="container">
             <form onSubmit={handleSubmit} className="white">
