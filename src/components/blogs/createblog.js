@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { createBlog } from '../../store/actions/blogActions';
 
 function CreateBlog() {
 
@@ -14,7 +16,8 @@ function CreateBlog() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(title, body);
+        createBlog(title,body);
+        
     }
 
 
@@ -38,4 +41,10 @@ function CreateBlog() {
     )
 }
 
-export default CreateBlog;
+const mapDispatchToProps = (dispatch) =>{
+    return {
+        createBlog: (blog) => dispatch(createBlog(blog))
+    }
+}
+
+export default connect(null,mapDispatchToProps)(CreateBlog);
