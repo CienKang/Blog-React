@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { createBlog } from '../../store/actions/blogActions';
 
-function CreateBlog() {
+function CreateBlog(props) {
 
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
@@ -16,8 +16,8 @@ function CreateBlog() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        createBlog(title,body);
-        
+        const blog = { title, body };
+        props.createBlog(blog);
     }
 
 
@@ -41,10 +41,10 @@ function CreateBlog() {
     )
 }
 
-const mapDispatchToProps = (dispatch) =>{
+const mapDispatchToProps = (dispatch) => {
     return {
         createBlog: (blog) => dispatch(createBlog(blog))
     }
 }
 
-export default connect(null,mapDispatchToProps)(CreateBlog);
+export default connect(null, mapDispatchToProps)(CreateBlog);

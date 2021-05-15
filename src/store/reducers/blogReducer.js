@@ -9,7 +9,7 @@ const initState = {
 const blogReducer = (state = initState, action) => {
     switch (action.type) {
         case 'CREATE_BLOG':
-            console.log('created project', action.blog) 
+            console.log('created blog', action.blog) 
             break;
         default:
             console.log('default');
