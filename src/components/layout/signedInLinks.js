@@ -9,7 +9,7 @@ const SignedInLinks = (props) => {
       <ul className="right">
         <li><NavLink to='/create'>New Project</NavLink></li>
         <li><a onClick={props.signOut}>Log Out</a></li>
-        <li><NavLink to='/' className="btn btn-floating pink lighten-1">NN</NavLink></li>
+        <li><NavLink to='/' className="btn btn-floating pink lighten-1">{props.profile.initials}</NavLink></li>
       </ul>
     </div>
   )
@@ -17,10 +17,10 @@ const SignedInLinks = (props) => {
 
 
 
-const mapDispatchToProps = (dispatch) =>{
-  return{
+const mapDispatchToProps = (dispatch) => {
+  return {
     signOut: () => dispatch(signOut())
   }
 }
 
-export default connect(null,mapDispatchToProps)(SignedInLinks)
+export default connect(null, mapDispatchToProps)(SignedInLinks)

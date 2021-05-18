@@ -8,7 +8,6 @@ import { compose } from 'redux'
 class Dashboard extends Component {
   render() {
 
-    // console.log(this.props);
     const { projects } = this.props;
 
     return (
@@ -27,9 +26,9 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state);
   return {
-    projects: state.firestore.ordered.projects
+    projects: state.firestore.ordered.projects,
+    auth: state.firebase.auth
   }
 }
 
