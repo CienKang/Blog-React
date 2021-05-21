@@ -8,7 +8,7 @@ import { compose } from 'redux'
 class Dashboard extends Component {
   render() {
 
-    const { projects } = this.props;
+    const { projects, notifications } = this.props;
 
     return (
       <div className="dashboard container">
@@ -17,7 +17,7 @@ class Dashboard extends Component {
             <ProjectList projects={projects} />
           </div>
           <div className="col s12 m5 offset-m1">
-            <Notifications />
+            <Notifications notifications={notifications} />
           </div>
         </div>
       </div>
@@ -28,13 +28,15 @@ class Dashboard extends Component {
 const mapStateToProps = (state) => {
   return {
     projects: state.firestore.ordered.projects,
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    notifications: state.firestore.ordered.notifications
   }
 }
 
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: 'projects' }
+    { collection: 'projects', orderBy: [['createdAt', 'desc']] },
+    { collection: 'notifications', limit: 3, orderBy: ['time', 'desc'] }
   ])
 )(Dashboard)
