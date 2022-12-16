@@ -1,6 +1,6 @@
 # React-Blog : A blogging website made by react
 
-[Spacetagram] is a blogging website made via react. It allows users to create a new account, sign-in and create a text-based blog where whole community can see these blogs.It uses firebase to store data and also uses it to host the website.
+[React Blog] is a blogging website made via react. It allows users to create a new account, sign-in and create a text-based blog where whole community can see these blogs.It uses firebase to store data and also uses it to host the website.
 
 ## Features
 
