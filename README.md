@@ -17,7 +17,7 @@ Following stack was used to make the web page
 - [Bootstrap] - For Great UI  for modern web apps.
 - [Firebase] - Provides back-end services like realtime database , hosting etc.
 
-   [Spacetagram]: <https://blog-via-react.web.app/>
+   [React Blog]: <https://blog-via-react.web.app/>
    [Bootstrap]: <https://getbootstrap.com/>
    [ReactJS]: <https://reactjs.org/>
    [Firebase]: <https://firebase.google.com/>
